@@ -1,0 +1,93 @@
+:root{
+    --dark-color:rgba(2, 170, 67, 0.575);
+    --medium-color:rgba(51, 51, 51,);
+    --light-color:rgba(2, 170, 67, 0.575);
+    --text-color:rgb(255, 255, 255);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 2rem;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to bottom right, var(--light-color), var(--dark-color)), url('../img/vodopad.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 77%, 0 94%);
+    color: var(--medium-color);
+}
+
+.text-box{
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.heading-primary{
+    text-transform: uppercase
+}
+
+.heading-primary-main{
+    display:block;
+    font-size:5rem;
+    letter-spacing: 1.5rem;
+    animation-name:moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary-sub{
+    display:block;
+    font-size: 2rem;
+    letter-spacing: .6rem;
+    animation-name:moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+.btn{
+    display: block;
+    position: absolute;
+    margin: 0;
+    top:100%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 2rem;
+    opacity: 0;
+    border: 2px solid var(--text-color);
+    animation-name: buttonAnim;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    transition-property: transform;
+    transition-delay: 3s;
+}
+
+@keyframes moveInLeft{
+    0%{transform: translateX(-100px); opacity:0;}
+    80%{transform: translateX(20px);}
+    100%{transform: translateX(0px);opacity: 1;}
+}
+
+@keyframes moveInRight{
+    0%{transform: translateX(100px); opacity:0;}
+    80%{transform: translateX(-20px);}
+    100%{transform: translateX(0px);opacity: 1;}
+}
+
+@keyframes buttonAnim{
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+}
